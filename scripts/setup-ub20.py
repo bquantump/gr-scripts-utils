@@ -18,14 +18,12 @@ cd volk;  git checkout 797b0ac846858d081fbb53ed50e98765ec9cb6b2;  mkdir build;  
 cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 ../;  make -j16;   sudo make install;'
 
 gnu_radio = 'cd git; git clone https://github.com/gnuradio/gnuradio.git; cd gnuradio; \
-git checkout a61868c1a2b74b405b6dedce5e7b855f4a7896bb; mkdir build; cd build; cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 ../; make -j16; make install'
+git checkout a61868c1a2b74b405b6dedce5e7b855f4a7896bb; mkdir build; cd build; cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 ../; make -j16; sudo make install'
 
 
-try: 
-    subprocess.check_call(basics.split(), shell=False)
-    subprocess.check_call(volk, shell=True)
-    subprocess.check_call(gnu_radio, shell=True)
-except subprocess.CalledProcessError as e:
-     print(e.output.decode())
+subprocess.check_call(basics.split(), shell=False)
+subprocess.check_call(volk, shell=True)
+subprocess.check_call(gnu_radio, shell=True)
+
     
             

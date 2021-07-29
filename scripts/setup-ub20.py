@@ -2,6 +2,7 @@ import os
 import sys
 import subprocess
 
+update = 'sudo apt update'
 basics = 'sudo apt install -y git cmake g++ libboost-all-dev libgmp-dev swig python3-numpy \
 python3-mako python3-sphinx python3-lxml doxygen libfftw3-dev \
 libsdl1.2-dev libgsl-dev libqwt-qt5-dev libqt5opengl5-dev python3-pyqt5 \
@@ -20,7 +21,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 ../;  make
 gnu_radio = 'cd git; git clone https://github.com/gnuradio/gnuradio.git; cd gnuradio; \
 git checkout a61868c1a2b74b405b6dedce5e7b855f4a7896bb; mkdir build; cd build; cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 ../; make -j16; sudo make install'
 
-
+subprocess.check_call(update.split(), shell=False)
 subprocess.check_call(basics.split(), shell=False)
 subprocess.check_call(volk, shell=True)
 subprocess.check_call(gnu_radio, shell=True)

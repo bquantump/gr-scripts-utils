@@ -15,11 +15,11 @@ sudo'
 
 
 volk = 'mkdir git; cd git; git clone --recursive https://github.com/gnuradio/volk.git;  \
-cd volk;  git checkout 797b0ac846858d081fbb53ed50e98765ec9cb6b2;  mkdir build;  cd build;  \
+cd volk;  git checkout 237a6fc9242ea8c48d2bbd417a6ea14feaf7314a;  mkdir build;  cd build;  \
 cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 ../;  make -j16;   sudo make install;'
 
 gnu_radio = 'cd git; git clone https://github.com/gnuradio/gnuradio.git; cd gnuradio; \
-git checkout a61868c1a2b74b405b6dedce5e7b855f4a7896bb; mkdir build; cd build; cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 ../; make -j16; sudo make install'
+git checkout c98adfbdbb88c08734a1507d6257755611b947c5; mkdir build; cd build; cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 ../; make -j16; sudo make install'
 
 subprocess.check_call(update.split(), shell=False)
 subprocess.check_call(basics.split(), shell=False)

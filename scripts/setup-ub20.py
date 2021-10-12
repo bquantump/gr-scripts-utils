@@ -14,7 +14,7 @@ sudo'
 
 
 
-volk = 'mkdir git; cd git; git clone --recursive https://github.com/gnuradio/volk.git;  \
+volk = 'sudo mkdir git; sudo chmod 777 -R git; cd git; git clone --recursive https://github.com/gnuradio/volk.git;  \
 cd volk;  git checkout 237a6fc9242ea8c48d2bbd417a6ea14feaf7314a;  mkdir build;  cd build;  \
 cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 ../;  make -j16;   sudo make install;'
 

@@ -26,7 +26,7 @@ subprocess.check_call(update.split(), shell=False)
 subprocess.check_call(basics.split(), shell=False)
 subprocess.check_call(volk, shell=True)
 subprocess.check_call(gnu_radio, shell=True)
-subprocess.check_call(xrdp, shell=True)
+#subprocess.check_call(xrdp, shell=True)
 
     
             
